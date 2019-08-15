@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hof
+    username: root
+    password: TestPass123?
+  jpa:
+    hibernate:
+      ddl-auto: none
