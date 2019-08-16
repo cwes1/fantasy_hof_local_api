@@ -13,9 +13,10 @@ public class Player {
     @Column(name="player_id")
     private Integer id;
 
+    @Column(nullable = false)
     private String firstName;
 
+    @Column(nullable = false)
     private String lastName;
-
 
 }

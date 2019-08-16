@@ -1,6 +1,7 @@
 package com.chris.legends.hof.local.api.model;
 
 import lombok.Data;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
@@ -10,21 +11,25 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="owner_id")
     private Integer id;
 
-    @Column(name="first_name")
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(nullable = false)
     private String lastName;
 
+    @NaturalId
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @NaturalId
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
 
     @OneToOne
-    @JoinColumn(name="keeper_player_id")
+    @JoinColumn(name="keeper_player_id",
+                foreignKey = @ForeignKey(name = "KEEPER_PLAYER_ID"))
     private Player keeper;
 
 }

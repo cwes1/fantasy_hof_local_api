@@ -1,22 +1,22 @@
 package com.chris.legends.hof.local.api.model;
 
+
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-public class Performance {
+public class NFLTeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="performance_id")
+    @Column(name="nfl_team_id")
     private Integer id;
 
-    //TODO: figure out relationship
-    private Player player;
+    private String location;
 
-    //private Week week;
+    private String locationAbbreviation;
 
-    private Double score;
+    private String mascot;
 }
