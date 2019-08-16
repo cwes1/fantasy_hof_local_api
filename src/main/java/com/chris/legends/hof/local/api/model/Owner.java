@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Owner {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
@@ -20,12 +20,19 @@ public class Owner {
     private String lastName;
 
     @NaturalId
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
+    private String nickname;
+
+    @NaturalId
+    @Column(unique = true)
     private String email;
 
     @NaturalId
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String phoneNumber;
+
+    @Column(name = "active_indicator", nullable = false)
+    private Boolean isActive;
 
     @OneToOne
     @JoinColumn(name="keeper_player_id",

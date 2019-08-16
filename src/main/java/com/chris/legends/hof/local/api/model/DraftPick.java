@@ -1,6 +1,7 @@
 package com.chris.legends.hof.local.api.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,18 +11,22 @@ import javax.persistence.*;
 public class DraftPick {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "draft_pick_id")
     private Integer id;
+
+    @Column(nullable = false)
+    private Integer roundNumber;
 
     @Column(nullable = false)
     private Integer pickNumber;
 
     @ManyToOne
-    @JoinColumn(name="draft_round_id",
+    @JoinColumn(name="draft_id",
                 foreignKey = @ForeignKey(name = "DRAFT_ID_FK"),
                 nullable = false)
-    private DraftRound round;
+    @JsonBackReference
+    private Draft draft;
 
     @ManyToOne
     @JoinColumn(name = "player_id",

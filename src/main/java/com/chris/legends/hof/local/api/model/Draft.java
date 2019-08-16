@@ -1,5 +1,6 @@
 package com.chris.legends.hof.local.api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
@@ -11,7 +12,7 @@ import java.util.Collection;
 public class Draft {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NaturalId
@@ -22,6 +23,7 @@ public class Draft {
     private String location;
 
     @OneToMany(mappedBy = "draft", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection<DraftRound> rounds;
+    @JsonManagedReference
+    private Collection<DraftPick> picks;
 
 }
