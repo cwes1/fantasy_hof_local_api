@@ -7,10 +7,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class nflTeam {
+public class NFLTeam {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="nfl_team_id")
     private Integer id;
 

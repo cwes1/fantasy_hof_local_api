@@ -1,8 +1,15 @@
+logging:
+  level:
+    org:
+      springframework: DEBUG
+      hibernate:
+        SQL: DEBUG
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/hof
+    url: jdbc:mysql://localhost:3306/hof_2
     username: root
     password: TestPass123?
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
