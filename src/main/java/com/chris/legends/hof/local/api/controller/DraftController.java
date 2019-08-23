@@ -1,7 +1,7 @@
 package com.chris.legends.hof.local.api.controller;
 
 
-import com.chris.legends.hof.local.api.model.Draft;
+import com.chris.legends.hof.local.api.model.entity.Draft;
 import com.chris.legends.hof.local.api.repository.DraftRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

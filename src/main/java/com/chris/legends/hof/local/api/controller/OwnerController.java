@@ -1,6 +1,6 @@
 package com.chris.legends.hof.local.api.controller;
 
-import com.chris.legends.hof.local.api.model.Owner;
+import com.chris.legends.hof.local.api.model.entity.Owner;
 import com.chris.legends.hof.local.api.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

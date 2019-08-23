@@ -1,4 +1,4 @@
-package com.chris.legends.hof.local.api.model;
+package com.chris.legends.hof.local.api.model.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;

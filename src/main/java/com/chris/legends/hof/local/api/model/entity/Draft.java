@@ -1,4 +1,4 @@
-package com.chris.legends.hof.local.api.model;
+package com.chris.legends.hof.local.api.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
